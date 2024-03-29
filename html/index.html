@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/main.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>Responsi Java Script</title>
+</head>
+<body>
+    <h1>Java Script</Script></h1>
+
+<div class="flex">
+  <div class="container">
+    <div class="bag">
+        <div class="box">
+            <div class="judul"><h3>My JavaScript Day - 1</h3></div>
+                <div class="isi">
+                    <div class="hari">
+                        <p>senin</p>
+                        <p>selasa</p>
+                        <p>rabu</p>
+                        <script>document.write('kamis')</script>
+                    </div>
+                    <div class="variabel">
+
+                        <script>variabel()</script>
+                    </div>
+                    <div class="tipeData">
+                        <p>
+                            Dalam Java Script tipe data tidak jauh berbeda dengan bahasa lain hanya di sini tipe data lebih di sederhanakan<br>
+                            1. String (teks) <br>
+                            2. integer atau Number (bilangan bulat) <br>
+                            3. Undifiend <br>
+                            4. Null<br>
+                            5. Bolean(Y/N)<br>
+                            6. Object<br>
+                            7. Array<br>
+                        </p>
+                        <button class="btn" onclick="tipeData()">Tipe data</button>
+                    </div>
+                    <button class="btn" type="button"
+                    onclick="btnDate()">
+                    tanggal Saat ini</button>
+                    <p id="demo"></p>
+                    <button class="btn" onclick="pesan()">tekan saya</button>
+                
+                </div>
+        </div>
+        <div class="box">
+            <div class="judul"><h3>My JavaScript Day - 2</h3></div>
+            <div class="isi">
+                <div class="cnv">
+                    <h4>Java Script Conversion</h4>
+                    <p>ada di konsole</p>
+                    <script>cnv()</script>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="judul">js dasar</div>
+            <div class="isi">
+                <form id="calculatorForm">
+                    <label for="operand1">Angka Pertama:</label>
+                    <input type="number" id="operand1" name="operand1" required><br><br>
+
+                    <label for="operator">Pilih Operasi:</label>
+                    <select id="operator" name="operator">
+                        <option value="tambah">+</option>
+                        <option value="kurang">-</option>
+                        <option value="kali">*</option>
+                        <option value="bagi">/</option>
+                    </select><br><br>
+
+                    <label for="operand2">Angka Kedua:</label>
+                    <input type="number" id="operand2" name="operand2" required><br><br>
+
+                    <button type="button" onclick="hitung()">Hitung</button>
+                </form>
+                <p id="hasil"></p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="judul">DOM PDF</div>
+            <div class="isi">
+                <form>
+                    <label for="input-id-barang">ID Barang:</label><br>
+                    <input type="text" id="input-id-barang" name="input-id-barang"><br>
+                    <label for="input-nm-barang">Nama Barang:</label><br>
+                    <input type="text" id="input-nm-barang" name="input-nm-barang"><br>
+                    <label for="input-bc-barang">Barcode Barang:</label><br>
+                    <input type="text" id="input-bc-barang" name="input-bc-barang"><br>
+                    <label for="input-hj-barang">Harga Jual Barang:</label><br>
+                    <input type="text" id="input-hj-barang" name="input-hj-barang"><br>
+                    <label for="jumlah_keluar">Jumlah Keluar:</label><br>
+                    <input type="text" id="jumlah_keluar" name="jumlah_keluar"><br><br>
+                    <label for="data-stok">Stok Tersedia:</label><br>
+                    <input type="text" id="data-stok" name="data-stok"><br><br>
+                    <button type="button" onclick="addToChart()">Add to Cart</button>
+                </form>
+                <table id="cart_table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID Barang</th>
+                            <th>Nama Barang</th>
+                            <th>Harga Jual</th>
+                            <th>Jumlah Dibeli</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                <div id="modal-item">
+                   
+                </div>
+                <script src="../assets/js/dom.js">
+                    addToChart()
+                </script>
+            </div>
+        </div> 
+    </div>
+  </div>
+</div>
+</body>
+</html>

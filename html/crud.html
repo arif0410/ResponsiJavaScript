@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <style>
+        /* Styling untuk tampilan aplikasi */
+        /* Anda dapat menyesuaikan sesuai dengan preferensi Anda */
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Tambahkan tugas...">
+    <button onclick="addTask()">Tambahkan</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        // Logika aplikasi
+        function addTask() {
+            var taskInput = document.getElementById('taskInput');
+            var taskList = document.getElementById('taskList');
+            var taskText = taskInput.value.trim();
+            
+            if (taskText !== '') {
+                var taskItem = document.createElement('li');
+                taskItem.textContent = taskText;
+                taskItem.onclick = function() {
+                    taskItem.classList.toggle('completed');
+                };
+                taskList.appendChild(taskItem);
+                taskInput.value = '';
+                saveTasks();
+            }
+        }
+
+        function saveTasks() {
+            var tasks = [];
+            var taskList = document.getElementById('taskList').children;
+            
+            for (var i = 0; i < taskList.length; i++) {
+                tasks.push({
+                    text: taskList[i].textContent,
+                    completed: taskList[i].classList.contains('completed')
+                });
+            }
+            
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function loadTasks() {
+            var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            var taskList = document.getElementById('taskList');
+            
+            for (var i = 0; i < tasks.length; i++) {
+                var taskItem = document.createElement('li');
+                taskItem.textContent = tasks[i].text;
+                
+                if (tasks[i].completed) {
+                    taskItem.classList.add('completed');
+                }
+                
+                taskItem.onclick = function() {
+                    this.classList.toggle('completed');
+                    saveTasks();
+                };
+                
+                taskList.appendChild(taskItem);
+            }
+        }
+
+        // Memuat tugas saat halaman dimuat
+        window.onload = loadTasks;
+    </script>
+</body>
+</html>

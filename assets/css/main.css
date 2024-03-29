@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* background-color: aqua; */
+}
+.flex{
+    background-image: url(../img/b.jpg);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* background-color: DodgerBlue; */
+    height: auto;
+    margin: 15px 8%;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    flex: 1 100%;
+    background-color: #f1f1f1;
+    height: max-content;
+    margin: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 30px;
+    border-radius: 15px;
+    border: 1px solid black;
+ 
+  }
+  .bag{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 1 px solid #aca3a3;
+  }
+  .box{
+    flex: 1;
+    margin: 10px;
+    
+  }
+  .judul{
+    flex-direction: row;
+    text-align: left;
+  }
+  .isi{
+    text-align: justify;
+  }
+  .btn{
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    color: aqua;
+    background-color: azure;
+    text-size-adjust: 15px;
+    border-radius: 5px;
+  }
+  .btn:hover {
+    background-color: aqua; /* Mengubah warna latar belakang saat dihover */
+    color: azure; /* Mengubah warna teks saat dihover */
+}
